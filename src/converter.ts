@@ -8,3 +8,9 @@ export function toCamelCase(input: string): string {
   });
   return camelCasedWords.join('');
 }
+
+export function toSlug(camelCaseInput: string): string {
+  return camelCaseInput
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+}

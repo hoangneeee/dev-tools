@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "dev-tools.helloWorld",
-        "title": "Hello World"
+        "command": "dev-tools.converToCamelCase",
+        "title": "Dev-tools: Convert To Camel Case"
+      },
+      {
+        "command": "dev-tools.convertToSlug",
+        "title": "Dev-tools: Convert To Slug"
       }
     ]
   },
