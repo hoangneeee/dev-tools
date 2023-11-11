@@ -56,7 +56,38 @@ export function activate(context: vscode.ExtensionContext) {
     }
   });
 
-  context.subscriptions.push(disposableCamelCase, disposableSnakeCase, disposableSlug, disposableCheckAndConvert);
+  let disposableToUpperCase = vscode.commands.registerCommand('dev-tools.convertToUpperCase', () => {
+    const editor = vscode.window.activeTextEditor;
+    if (editor) {
+      const selection = editor.selection;
+      const text = editor.document.getText(selection);
+      const slugText = text.toUpperCase();
+      editor.edit((editBuilder) => {
+        editBuilder.replace(selection, slugText);
+      });
+    }
+  });
+
+  let disposableToLowerCase = vscode.commands.registerCommand('dev-tools.convertToLowerCase', () => {
+    const editor = vscode.window.activeTextEditor;
+    if (editor) {
+      const selection = editor.selection;
+      const text = editor.document.getText(selection);
+      const slugText = text.toLowerCase();
+      editor.edit((editBuilder) => {
+        editBuilder.replace(selection, slugText);
+      });
+    }
+  });
+
+  context.subscriptions.push(
+    disposableCamelCase,
+    disposableSnakeCase,
+    disposableSlug,
+    disposableCheckAndConvert,
+    disposableToUpperCase,
+    disposableToLowerCase,
+  );
 }
 
 export function deactivate() {}

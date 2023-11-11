@@ -21,6 +21,14 @@
   "contributes": {
     "commands": [
       {
+        "command": "dev-tools.convertToUpperCase",
+        "title": "Dev-tools: Convert To Upper Case"
+      },
+      {
+        "command": "dev-tools.convertToLowerCase",
+        "title": "Dev-tools: Convert To Lower Case"
+      },
+      {
         "command": "dev-tools.converToCamelCase",
         "title": "Dev-tools: Convert To Camel Case"
       },
@@ -44,6 +52,7 @@
   ],
   "scripts": {
     "vscode:prepublish": "yarn run package",
+    "release": "semantic-release",
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
@@ -69,5 +78,10 @@
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^22.0.7"
   }
 }
