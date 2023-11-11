@@ -9,8 +9,10 @@ export function toCamelCase(input: string): string {
   return camelCasedWords.join('');
 }
 
-export function toSlug(camelCaseInput: string): string {
-  return camelCaseInput
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .toLowerCase();
+export function toSlug(input: string): string {
+  return input.replace(/_/g, '-').toLowerCase();
+}
+
+export function toSnake(input: string): string {
+  return input.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
 }

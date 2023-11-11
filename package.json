@@ -1,7 +1,14 @@
 {
-  "name": "dev-tools",
-  "displayName": "dev-tools",
+  "name": "dev-toolss",
+  "displayName": "dev-toolss",
   "description": "Development support tools",
+  "license": "MIT",
+  "publisher": "dev-toolss",
+  "author": {
+    "name": "Vo Hoang",
+    "email": "levuthanhtung11@gmail.com"
+  },
+  "icon": "./icons/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.84.0"
@@ -20,9 +27,21 @@
       {
         "command": "dev-tools.convertToSlug",
         "title": "Dev-tools: Convert To Slug"
+      },
+      {
+        "command": "dev-tools.checkAndConvert",
+        "title": "Dev-tools: Check And Convert"
       }
     ]
   },
+  "keybindings": [
+    {
+      "command": "dev-tools.checkAndConvert",
+      "key": "cmd+ctrl+c",
+      "mac": "cmd+ctrl+c",
+      "when": "editorTextFocus"
+    }
+  ],
   "scripts": {
     "vscode:prepublish": "yarn run package",
     "compile": "webpack",
