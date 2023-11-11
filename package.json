@@ -52,6 +52,7 @@
   ],
   "scripts": {
     "vscode:prepublish": "yarn run package",
+    "vscode:publish": "vsce publish",
     "release": "semantic-release",
     "compile": "webpack",
     "watch": "webpack --watch",
