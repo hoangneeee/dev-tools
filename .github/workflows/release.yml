@@ -19,12 +19,12 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn
 
       - name: Build and Package VSCode Extension
-        run: npm run vscode:prepublish
+        run: yarn vscode:prepublish
 
       - name: Publish to Marketplace
-        run: npm run vscode:publish
+        run: yarn vscode:publish
         env:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
