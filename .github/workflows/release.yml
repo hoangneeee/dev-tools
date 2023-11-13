@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - master
 
 jobs:
   release:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -23,6 +25,11 @@ jobs:
 
       - name: Install vsce
         run: yarn add global vsce
+      
+      - name: Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Package VSCode Extension
         run: yarn vscode:prepublish
