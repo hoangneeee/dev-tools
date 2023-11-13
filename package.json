@@ -3,13 +3,13 @@
   "displayName": "dev-toolss",
   "description": "Development support tools",
   "license": "MIT",
-  "publisher": "dev-toolss",
+  "publisher": "dev-tools",
   "author": {
     "name": "Vo Hoang",
     "email": "levuthanhtung11@gmail.com"
   },
   "icon": "icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.84.0"
   },
