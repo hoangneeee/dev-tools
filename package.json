@@ -83,6 +83,8 @@
   "dependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^22.0.7"
+    "global": "^4.4.0",
+    "semantic-release": "^22.0.7",
+    "vsce": "^2.15.0"
   }
 }
